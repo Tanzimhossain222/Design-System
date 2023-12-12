@@ -1,6 +1,9 @@
 node_modules/
 packages/scss/dist/
 packages/scss/dist/*
+packages/react/lib/*
 dist/*
 dist/**/*
+
+
 
