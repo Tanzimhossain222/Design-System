@@ -1,6 +1,6 @@
 node_modules/
-scss/dist/
-scss/dist/*
+packages/scss/dist/
+packages/scss/dist/*
 dist/*
 dist/**/*
 

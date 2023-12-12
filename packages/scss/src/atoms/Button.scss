@@ -6,6 +6,7 @@
     font-size: $body-font-size;
     padding: map-get($spacing, "xxs") map-get($spacing, "sm");
     border-radius: map-get($spacing, "xxxs");
+    cursor: pointer;
 }
 
 .btn-primary{
