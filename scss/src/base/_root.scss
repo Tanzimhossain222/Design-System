@@ -1,0 +1,40 @@
+/** Default css root variables */
+
+:root {
+    --dse-body-text-color: #($dark);
+    --dse-body-bg-color: #($white);
+
+    --dse-btn-primary-color: #($white);
+    --dse-btn-primary-bg-color: #($green);
+    --dse-btn-primary-bg-hover: #($gray-light);
+
+    --dse-form-border-color: #($white-dark);
+    --dse-form-bg-color: #($white);
+    --dse-form-bg-option-selected: #($green);
+    --dse-form-color-option-selected: #($white);
+    --dse-form-bg-color-hover: #($white-dark);
+    --dse-form-color: #($dark);
+    --dse-form-bg: #($white);
+    --dse-form-error-color: #($red);
+    --dse-form-error-border: #($red);
+    --dse-form-border-focus-color: #($green);
+
+    --dse-body-font-family: #($playfair);
+    --dse-body-font-size: #($fs-sm);
+    --dse-body-font-weight: #($fw-normal);
+
+    --dse-h1-font-size: #($h-1);
+    --dse-h2-font-size: #($h-2);
+    --dse-h3-font-size: #($h-3);
+    --dse-h4-font-size: #($h-4);
+    --dse-h5-font-size: #($h-5);
+    --dse-h6-font-size: #($h-6);
+    
+    --dse-h1-font-weight: #($fw-black);
+    --dse-h2-font-weight: #($fw-semibold);
+    --dse-h3-font-weight: #($fw-bold);
+    --dse-h4-font-weight: #($fw-medium);
+    --dse-h5-font-weight: #($fw-normal);
+    --dse-h6-font-weight: #($fw-light);
+
+}

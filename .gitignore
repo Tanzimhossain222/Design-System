@@ -1,0 +1,6 @@
+node_modules/
+scss/dist/
+scss/dist/*
+dist/*
+dist/**/*
+
