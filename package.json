@@ -1,8 +1,17 @@
 {
-  "name": "@@ds.e/core",
+  "name": "@ds.e/core",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Tanzimhossain222/Design-System.git",
   "author": "Tanzim Hossain <tanzimhossain2@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^8.0.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
 }
