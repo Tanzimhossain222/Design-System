@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "yarn build -w"
   },
   "dependencies": {
     "@ds.e/scss": "^1.0.0"}
