@@ -13,5 +13,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"
-  }
+  },
+  "dependencies": {
+    "@ds.e/scss": "^1.0.0"}
 }

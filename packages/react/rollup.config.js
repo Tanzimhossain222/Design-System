@@ -1,7 +1,9 @@
 const TS = require('rollup-plugin-typescript2');
 
 module.exports = {
-    input: ['src/index.ts'],
+    input: ['src/index.ts',
+    'src/atoms/Button/index.ts'
+],
     output: {
         dir: 'lib',
         format: 'esm',
@@ -9,4 +11,5 @@ module.exports = {
         preserveModules: true,
     },
     plugins: [TS()],
+    external: ['react','@ds.e/scss/dist/Button..css'],
 }
