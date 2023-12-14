@@ -11,8 +11,8 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "yarn build -w"
+    "dev": "rollup -c -w", 
+    "build": "rollup -c"
   },
   "dependencies": {
     "@ds.e/scss": "^1.0.0"}
