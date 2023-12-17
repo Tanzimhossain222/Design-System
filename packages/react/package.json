@@ -11,9 +11,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "dev": "rollup -c -w", 
-    "build": "rollup -c"
-  },
-  "dependencies": {
-    "@ds.e/scss": "^1.0.0"}
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  }
 }

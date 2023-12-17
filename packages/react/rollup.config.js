@@ -5,6 +5,7 @@ module.exports = {
     'src/atoms/Button/index.ts',
     'src/atoms/Color/index.ts',
     'src/atoms/Text/index.ts',
+    'src/atoms/Margin/index.ts',
 
 ],
     output: {
@@ -15,5 +16,5 @@ module.exports = {
     },
     plugins: [TS()],
     // external: ['react','@ds.e/scss/dist/Button..css'],
-    external: ['react', '@ds.e/foundation', '@ds.e/scss/dist/Button.css'],
+    external: ['react', '@ds.e/foundation'],
 }

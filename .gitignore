@@ -2,6 +2,8 @@ node_modules/
 packages/scss/dist/
 packages/scss/dist/*
 packages/react/lib/*
+packages/foundation/lib/
+packages/foundation/lib/*
 dist/*
 dist/**/*
 
