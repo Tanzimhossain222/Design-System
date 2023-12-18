@@ -7,16 +7,24 @@ interface SelectOption {
   value: string;
 }
 
+interface RenderOptionProps {
+  isSelected?: boolean;
+  option: SelectOption;
+  getOptionRecommendedProps: (overrideProps?: Object) => Object;
+}
+
 interface SelectProps {
   label?: string;
   options?: Array<SelectOption>;
   onOptionSelect?: (option: SelectOption, optionIndx: number) => void;
+  renderOption?: (props: RenderOptionProps) => React.ReactNode;
 }
 
 const Select: React.FC<SelectProps> = ({
   label = "Please select an option",
   options = [],
   onOptionSelect,
+  renderOption,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [overlayTop, setOverlayTop] = useState<number>(0);
@@ -41,10 +49,9 @@ const Select: React.FC<SelectProps> = ({
   };
 
   let selectedOption = null;
-    if (selectedIndex !== null) {
-        selectedOption = options[selectedIndex];
-    }
-  
+  if (selectedIndex !== null) {
+    selectedOption = options[selectedIndex];
+  }
 
   return (
     <div className="dse-select">
@@ -60,7 +67,9 @@ const Select: React.FC<SelectProps> = ({
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`dse-select__caret ${isOpen ? "dse-select__caret--open" : "dse-select__caret--close"}`}
+          className={`dse-select__caret ${
+            isOpen ? "dse-select__caret--open" : "dse-select__caret--close"
+          }`}
           width={"1rem"}
           height={"1rem"}
         >
@@ -75,25 +84,53 @@ const Select: React.FC<SelectProps> = ({
         <ul style={{ top: overlayTop }} className="dse-select__overlay">
           {options.map((option, index) => {
             const isSelected = selectedIndex === index;
+
+            const renderOptionProps: RenderOptionProps = {
+              isSelected,
+              option,
+              getOptionRecommendedProps: (overrideProps = {}) => ({
+                //we will define default props here
+                key: option.value,
+                className: ` dse-select__option ${
+                  isSelected ? "dse-select__option--selected" : ""
+                } `,
+                onClick: () => handleOptionClick(option, index),
+
+                //here we will spread the override props
+                ...overrideProps,
+              }),
+            };
+            if (renderOption) {
+              return renderOption(renderOptionProps);
+            }
+
             return (
               <li
-
                 className={`dse-select__option ${
                   isSelected ? "dse-select__option--selected" : ""
                 }`}
-
                 key={option.value}
                 onClick={() => handleOptionClick(option, index)}
               >
-              <Text>{option.label}</Text>
-              {isSelected && (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="dse-select__caret"  width={"1rem"}
-                height={"1rem"}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-              </svg>
-              
-              )}
-
+                <Text>{option.label}</Text>
+                {isSelected && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="dse-select__caret"
+                    width={"1rem"}
+                    height={"1rem"}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                )}
               </li>
             );
           })}

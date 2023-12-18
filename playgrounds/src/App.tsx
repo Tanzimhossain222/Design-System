@@ -29,7 +29,17 @@ const App = () => {
             label="Select Choose a color"
             options={colorOptions}
             onOptionSelect={console.log}
-          ></Select>
+            renderOption={({ option, getOptionRecommendedProps, isSelected }) => (
+              <li {...getOptionRecommendedProps({
+                className: `custom-select-option ${isSelected ? "custom-select-option--selected" : ""}`
+              })}> 
+                <div style={{display:'flex'}}>
+                <input type="checkbox" checked={isSelected} />
+                <Text size="sm">{option.label}</Text>
+                </div> 
+              </li>
+            )}
+          ></Select> 
         </Margin>
         <Text>End of Select</Text>
       </Margin>
