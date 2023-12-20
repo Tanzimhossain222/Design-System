@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "build": "node ./src/scripts/build.js"
+    "build": "node ./src/scripts/build.js",
+    "dev": "nodemon --watch src --exec yarn build -e scss"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }

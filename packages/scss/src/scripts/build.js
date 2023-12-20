@@ -35,7 +35,7 @@ const getComponents = (dir)=>{
     const allFiles = fs.readdirSync(`src/${type}`).map(file=>(
       {
         src: `src/${type}/${file}`,
-        output: `dist/${file.slice(0, -4)}.css`
+        output: `dist/${file.slice(0, -4)}css`
       }
     ))
 
