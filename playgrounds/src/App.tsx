@@ -32,7 +32,7 @@ const App = () => {
             // )}
           ></Select> 
         </Margin>
-        <Text>End of Select</Text>
+        <Text>End of Select.</Text>
       </Margin>
     </div>
   );

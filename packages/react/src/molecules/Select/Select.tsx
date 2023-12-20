@@ -16,18 +16,18 @@ const KEY_CODES = {
   DOWN: 40,
 };
 
-interface SelectOption {
+export interface SelectOption {
   label: string;
   value: string;
 }
 
-interface RenderOptionProps {
+export interface RenderOptionProps {
   isSelected?: boolean;
   option: SelectOption;
   getOptionRecommendedProps: (overrideProps?: Object) => Object;
 }
 
-interface SelectProps {
+export interface SelectProps {
   label?: string;
   options?: Array<SelectOption>;
   onOptionSelected?: (option: SelectOption, optionIndx: number) => void;

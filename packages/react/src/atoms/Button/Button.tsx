@@ -1,8 +1,9 @@
 import React from 'react'
 import '@ds.e/scss/dist/Button.css'
-interface ButtonProps {
+
+export interface ButtonProps {
     title: string;
-    onClick: () => void;
+    onClick?: () => void;
     children: React.ReactNode;
 }
 
